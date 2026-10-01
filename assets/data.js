@@ -19,6 +19,9 @@ window.RUMMANA = {
   // ملاحظة بتظهر بالسلة عن سعر التوصيل (مثال: "التوصيل 20 ₪ داخل الخليل و30 ₪ لباقي المناطق")
   deliveryNote: "",
 
+  // رقم جدول Google Sheets اللي فيه المنتجات وآراء العملاء (إذا تعبّى، المنتجات بتنقرأ من الجدول بدل هاد الملف)
+  sheetId: "1sTy61DiSIP2DTqiP8sy4rQFIb2qyduScJZNCntgZivI",
+
   currency: "₪",
 
   categories: [

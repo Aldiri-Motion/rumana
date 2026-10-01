@@ -68,6 +68,7 @@
   $("#pickups").innerHTML = D.pickupPoints.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("");
 
   // testimonials
+  function renderReviews() {
   var rv = $("#reviews");
   if (D.testimonials.length) {
     rv.innerHTML = D.testimonials.map(function (t) {
@@ -76,6 +77,9 @@
   } else {
     rv.innerHTML = '<div class="empty"><p>تجارب عملائنا بتنزل هون قريبًا.</p><a class="btn btn-ghost js-wa" data-msg="مرحبا رمانة 🤍 حابب أشارككم تجربتي">شاركنا تجربتك</a></div>';
   }
+  bindWa(rv);
+  }
+  renderReviews();
 
   // contact
   var C = D.contact;
@@ -211,7 +215,8 @@
   }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch (e) {} }
   // drop items whose product no longer exists
-  cart = cart.filter(function (it) { return findProduct(it.id); });
+  function pruneCart() { cart = cart.filter(function (it) { return findProduct(it.id); }); }
+  if (!D.sheetId) pruneCart();
   function hasPrice(p) { return p.price != null && p.price !== ""; }
 
   function renderCart() {
@@ -325,4 +330,73 @@
   });
   window.addEventListener("hashchange", route);
   route();
+
+  /* ---------- Google Sheet (products + reviews edited by the shop owner) ---------- */
+  function parseCSV(text) {
+    var rows = [], row = [], cell = "", q = false;
+    for (var i = 0; i < text.length; i++) {
+      var ch = text[i];
+      if (q) {
+        if (ch === '"') { if (text[i + 1] === '"') { cell += '"'; i++; } else q = false; }
+        else cell += ch;
+      } else if (ch === '"') q = true;
+      else if (ch === ",") { row.push(cell); cell = ""; }
+      else if (ch === "\n") { row.push(cell); rows.push(row); row = []; cell = ""; }
+      else if (ch !== "\r") cell += ch;
+    }
+    if (cell || row.length) { row.push(cell); rows.push(row); }
+    return rows;
+  }
+  function sheetRows(tab) {
+    var url = "https://docs.google.com/spreadsheets/d/" + D.sheetId + "/gviz/tq?tqx=out:csv&headers=1&sheet=" + encodeURIComponent(tab);
+    return fetch(url).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }).then(function (t) {
+      var rows = parseCSV(t).filter(function (r) { return r.join("").trim(); });
+      var head = (rows.shift() || []).map(function (h) { return h.trim(); });
+      return rows.map(function (r) {
+        var o = {};
+        head.forEach(function (h, i) { o[h] = (r[i] || "").trim(); });
+        return o;
+      });
+    });
+  }
+  function imgUrl(u) {
+    if (!u) return "";
+    var m = u.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=\w+&)?id=)([\w-]+)/);
+    return m ? "https://drive.google.com/thumbnail?id=" + m[1] + "&sz=w1000" : u;
+  }
+  function catByName(n) {
+    n = (n || "").trim();
+    if (!n) return null;
+    for (var i = 0; i < D.categories.length; i++) {
+      var c = D.categories[i];
+      if (c.name === n || c.id === n || c.name.indexOf(n) === 0) return c;
+    }
+    return null;
+  }
+  function refreshAfterSheet() {
+    var h = (location.hash || "#home").slice(1), cat = catById(h);
+    if (cat) { renderCategory(cat); bindWa($("#prodGrid").parentNode); }
+    pruneCart(); save(); renderCart();
+  }
+  if (D.sheetId) {
+    sheetRows("المنتجات").then(function (rows) {
+      D.categories.forEach(function (c) { c.products = []; });
+      rows.forEach(function (r) {
+        var hide = /^(لا|no|مخفي)$/i.test(r["ظاهر"] || "");
+        var c = catByName(r["القسم"]);
+        if (!c || !r["اسم المنتج"] || hide) return;
+        var price = (r["السعر"] || "").replace(/[^\d.]/g, "");
+        c.products.push({
+          id: c.id + "-" + r["اسم المنتج"],
+          name: r["اسم المنتج"], desc: r["الوصف"] || "",
+          price: price === "" ? "" : Number(price), img: imgUrl(r["رابط الصورة"]),
+        });
+      });
+      refreshAfterSheet();
+    }).catch(function () { pruneCart(); renderCart(); });
+    sheetRows("آراء العملاء").then(function (rows) {
+      var t = rows.filter(function (r) { return r["الكلام"]; }).map(function (r) { return { name: r["الاسم"], city: r["المدينة"], text: r["الكلام"] }; });
+      if (t.length) { D.testimonials = t; renderReviews(); }
+    }).catch(function () {});
+  }
 })();
