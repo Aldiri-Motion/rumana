@@ -12,6 +12,15 @@
       "price": 10,
       "img": "assets/logo-ar.png",
       "hidden": false
+    },
+    {
+      "id": "pmupnkdy9",
+      "cat": "frames",
+      "name": "test",
+      "desc": "asdasdsadsad",
+      "price": 50,
+      "img": "assets/products/pmupnkdy9-mupnkdy9.jpg",
+      "hidden": false
     }
   ],
   "testimonials": []
