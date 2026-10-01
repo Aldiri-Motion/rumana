@@ -91,11 +91,23 @@
       content.testimonials = content.testimonials || [];
     });
   }
-  function saveContent(msg) {
-    var b64 = bytesToB64(enc.encode(JSON.stringify(content, null, 2) + "\n"));
-    return put("content.json", b64, msg, contentSha).then(function (r) {
-      contentSha = r.content.sha;
-      toast("انحفظ ✓ الموقع بيتحدث خلال دقيقة أو دقيقتين.");
+  function commit(msg, mutate) {
+    var before = JSON.stringify(content);
+    function attempt() {
+      var b64 = bytesToB64(enc.encode(JSON.stringify(content, null, 2) + "\n"));
+      return put("content.json", b64, msg, contentSha).then(function (r) {
+        contentSha = r.content.sha;
+        toast("انحفظ ✓ الموقع بيتحدث خلال دقيقة أو دقيقتين.");
+      });
+    }
+    mutate(content);
+    return attempt().catch(function (e) {
+      // someone else saved meanwhile (another device or tab): take the latest and redo this change once
+      if (e.status !== 409 && e.status !== 422) throw e;
+      return loadContent().then(function () { mutate(content); return attempt(); });
+    }).catch(function (e) {
+      if (e.status !== 409 && e.status !== 422) content = JSON.parse(before);
+      throw e;
     });
   }
   function withBusy(el, p) {
@@ -202,9 +214,12 @@
     var mv = e.target.closest("[data-move]");
     if (mv) {
       var i = Number(mv.getAttribute("data-i")), j = i + Number(mv.getAttribute("data-move"));
-      var a = content.products, t = a[i]; a[i] = a[j]; a[j] = t;
-      renderProducts();
-      withBusy($("#plist"), saveContent("Reorder products")).catch(function () {});
+      var idA = content.products[i].id, idB = content.products[j].id;
+      withBusy($("#plist"), commit("Reorder products", function (c) {
+        var a = c.products, x = a.findIndex(function (p) { return p.id === idA; }), y = a.findIndex(function (p) { return p.id === idB; });
+        if (x < 0 || y < 0) return;
+        var t = a[x]; a[x] = a[y]; a[y] = t;
+      })).finally(renderProducts).catch(function () {});
     }
   });
 
@@ -278,8 +293,10 @@
       }).then(function () { fresh[path] = URL.createObjectURL(newImage); p.img = path; });
     }
     withBusy($("#pm"), step.then(function () {
-      if (old) content.products[editing] = p; else content.products.push(p);
-      return saveContent((old ? "Update " : "Add ") + "product: " + p.name);
+      return commit((old ? "Update " : "Add ") + "product: " + p.name, function (c) {
+        var k = c.products.findIndex(function (x) { return x.id === p.id; });
+        if (k >= 0) c.products[k] = p; else c.products.push(p);
+      });
     })).then(function () { closeProduct(); renderProducts(); }).catch(function () {});
   });
 
@@ -287,9 +304,9 @@
     var b = this;
     if (!b.hasAttribute("data-sure")) { b.setAttribute("data-sure", "1"); b.textContent = "متأكد؟ اكبس مرة ثانية للحذف"; return; }
     var p = content.products[editing];
-    content.products.splice(editing, 1);
-    withBusy($("#pm"), saveContent("Delete product: " + p.name))
-      .then(function () { closeProduct(); renderProducts(); }, function () { content.products.splice(editing, 0, p); });
+    withBusy($("#pm"), commit("Delete product: " + p.name, function (c) {
+      c.products = c.products.filter(function (x) { return x.id !== p.id; });
+    })).then(function () { closeProduct(); renderProducts(); }, function () { renderProducts(); });
   });
 
   /* ---------- reviews ---------- */
@@ -304,16 +321,17 @@
     e.preventDefault();
     var r = { name: $("#rv-name").value.trim(), city: $("#rv-city").value.trim(), text: $("#rv-text").value.trim() };
     if (!r.name || !r.text) return;
-    content.testimonials.push(r);
-    withBusy(e.target, saveContent("Add review from " + r.name))
-      .then(function () { e.target.reset(); renderReviews(); }, function () { content.testimonials.pop(); });
+    withBusy(e.target, commit("Add review from " + r.name, function (c) { c.testimonials.push(r); }))
+      .then(function () { e.target.reset(); renderReviews(); }, renderReviews);
   });
   $("#rlist").addEventListener("click", function (e) {
     var b = e.target.closest("[data-del]");
     if (!b) return;
     if (!b.hasAttribute("data-sure")) { b.setAttribute("data-sure", "1"); b.textContent = "متأكد؟"; return; }
-    var i = Number(b.getAttribute("data-del")), r = content.testimonials.splice(i, 1)[0];
-    withBusy($("#rlist"), saveContent("Remove review")).then(renderReviews, function () { content.testimonials.splice(i, 0, r); renderReviews(); });
+    var r = content.testimonials[Number(b.getAttribute("data-del"))];
+    withBusy($("#rlist"), commit("Remove review", function (c) {
+      c.testimonials = c.testimonials.filter(function (x) { return !(x.name === r.name && x.text === r.text); });
+    })).then(renderReviews, renderReviews);
   });
 
   /* ---------- settings ---------- */
@@ -326,14 +344,15 @@
   }
   $("#setForm").addEventListener("submit", function (e) {
     e.preventDefault();
-    var st = content.settings;
-    st.deliveryNote = $("#st-delivery").value.trim();
+    var note = $("#st-delivery").value.trim(), vals = {};
     FIELDS.forEach(function (k) {
       var v = $("#st-" + k).value.trim();
-      if (k === "whatsapp") v = v.replace(/\D/g, "");
-      st.contact[k] = v;
+      vals[k] = k === "whatsapp" ? v.replace(/\D/g, "") : v;
     });
-    withBusy(e.target, saveContent("Update settings")).catch(function () {});
+    withBusy(e.target, commit("Update settings", function (c) {
+      c.settings.deliveryNote = note;
+      FIELDS.forEach(function (k) { c.settings.contact[k] = vals[k]; });
+    })).catch(function () {});
   });
 
   function renderAll() { renderProducts(); renderReviews(); renderSettings(); }
