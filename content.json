@@ -5,15 +5,6 @@
   },
   "products": [
     {
-      "id": "pmupnkdy9",
-      "cat": "frames",
-      "name": "test",
-      "desc": "asdasdsadsad",
-      "price": 50,
-      "img": "assets/products/pmupnkdy9-mupnkdy9.jpg",
-      "hidden": false
-    },
-    {
       "id": "ptest",
       "cat": "mugs",
       "name": "منتج تجريبي",
