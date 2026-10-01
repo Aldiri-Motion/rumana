@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rumana.ps/sitemap.xml

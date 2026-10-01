@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="رمانة مشروع فلسطيني إبداعي يقدّم منتجات وهدايا مخصصة: براويز، مجات، صور، توزيعات مناسبات وستيكرات. نحوّل الذكريات إلى هدايا تحمل معنى.">
+<meta name="theme-color" content="#850625">
+<link rel="canonical" href="https://rumana.ps/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rumana.ps/">
+<meta property="og:title" content="رمانة | نحوّل الذكريات إلى هدايا تحمل معنى">
+<meta property="og:description" content="منتجات وهدايا مخصصة من فلسطين: براويز، مجات، صور، توزيعات مناسبات وستيكرات. اطلب عبر واتساب.">
+<meta property="og:image" content="https://rumana.ps/assets/logo-ar.png">
+<meta property="og:locale" content="ar_PS">
+<link rel="icon" type="image/png" href="assets/logo-ar.png">
+<!--HEAD-START-->
+<title>رمانة | هدايا تحمل معنى</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<!--HEAD-END-->
+</head>
+<body>
+<!--BODY-START-->
+<div class="site" dir="rtl" lang="ar">
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="#home" class="brand" aria-label="رمانة، الصفحة الرئيسية"><span class="logo-ar" role="img" aria-label="رمانة"></span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span><b class="sr">القائمة</b></button>
+    <button class="cart-btn" id="cartBtn" aria-controls="cart" aria-label="سلة الطلب">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+      <span class="cart-label">السلة</span><b class="cart-count" id="cartCount" hidden>0</b>
+    </button>
+    <nav class="mainnav" id="mainNav" aria-label="القائمة الرئيسية">
+      <a href="#home" data-nav="home">الرئيسية</a>
+      <a href="#about" data-nav="about">من نحن</a>
+      <div class="has-sub">
+        <a href="#products" data-nav="products">منتجاتنا</a>
+        <div class="sub" id="subNav"></div>
+      </div>
+      <a href="#why" data-nav="why">ليش رمانة؟</a>
+      <a href="#how" data-nav="how">كيف تطلب؟</a>
+      <a href="#delivery" data-nav="delivery">التوصيل والاستلام</a>
+      <a href="#reviews" data-nav="reviews">تجارب عملائنا</a>
+      <a href="#contact" data-nav="contact">تواصل معنا</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== الصفحة الرئيسية ===== -->
+  <section class="page" data-page="home">
+    <div class="hero wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">مشروع فلسطيني إبداعي · منذ 2025</p>
+        <h1>نحوّل الذكريات<br>إلى هدايا <em>تحمل معنى</em></h1>
+        <p class="lead">براويز، مجات، صور، توزيعات مناسبات وستيكرات، تُصمَّم خصيصًا لك وتوصلك مغلّفة بعناية.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#products">تصفّح منتجاتنا</a>
+          <a class="btn btn-ghost js-wa" data-msg="مرحبا رمانة 🤍 عندي فكرة هدية وبدي أستفسر عنها">احكيلنا فكرتك على واتساب</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="polaroid p1"><div class="ph"><span>صورتك</span></div><i>ذكرى بتبقى</i></div>
+        <div class="polaroid p2"><div class="ph"><span>هنا</span></div><i>بحب 🤍</i></div>
+        <div class="seeds"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+      </div>
+    </div>
+
+    <div class="wrap block">
+      <div class="block-head">
+        <h2>منتجاتنا</h2>
+        <a class="more" href="#products">كل الأقسام ←</a>
+      </div>
+      <div class="cat-grid" id="homeCats"></div>
+    </div>
+
+    <div class="band">
+      <div class="wrap block">
+        <div class="block-head"><h2>ليش رمانة؟</h2><a class="more" href="#why">اعرف أكثر ←</a></div>
+        <div class="why-grid js-why"></div>
+      </div>
+    </div>
+
+    <div class="wrap block">
+      <div class="block-head"><h2>كيف تطلب؟</h2><a class="more" href="#how">التفاصيل ←</a></div>
+      <ol class="steps js-steps"></ol>
+    </div>
+
+    <div class="wrap block">
+      <div class="closing">
+        <p class="closing-line">في رمانة لا نبيع منتجات فقط، بل نصنع ذكريات تُهدى، ولحظات تبقى.</p>
+        <a class="btn btn-light js-wa" data-msg="مرحبا رمانة 🤍 بدي أطلب">ابدأ طلبك عبر واتساب</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== من نحن ===== -->
+  <section class="page" data-page="about" hidden>
+    <div class="wrap page-head">
+      <p class="eyebrow">من نحن</p>
+      <h1>قصة رمانة</h1>
+    </div>
+    <div class="wrap about">
+      <div class="prose">
+        <p class="first">رمانة مشروع فلسطيني إبداعي تأسس عام 2025 انطلاقًا من شغف بالفن والتصوير والإيمان بأن أجمل الهدايا هي تلك التي تحمل قصة وذكرى ومعنى.</p>
+        <p>نقدّم في رمانة منتجات وهدايا مخصصة تُصمَّم بعناية لتُعبّر عن أصحابها، وتحوّل الصور واللحظات والكلمات إلى قطع فنية يمكن الاحتفاظ بها أو إهداؤها لمن نحب.</p>
+        <p>نمزج بين جودة الطباعة، والتخصيص، والتغليف الأنيق، واللمسة الفنية التي تجعل كل منتج مختلفًا وفريدًا. كما نحرص على دعم الإنتاج المحلي والتعاون مع سيدات فلسطينيات في بعض المنتجات اليدوية، لنمنح كل قطعة قيمة تتجاوز شكلها الخارجي.</p>
+        <p class="pull">في رمانة لا نبيع منتجات فقط، بل نصنع ذكريات تُهدى، ولحظات تبقى.</p>
+      </div>
+      <aside class="facts">
+        <div><span>التأسيس</span><b>2025</b></div>
+        <div><span>من</span><b>فلسطين</b></div>
+        <div><span>شغفنا</span><b>الفن والتصوير</b></div>
+        <div><span>نتعاون مع</span><b>سيدات فلسطينيات</b></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== منتجاتنا ===== -->
+  <section class="page" data-page="products" hidden>
+    <div class="wrap page-head">
+      <p class="eyebrow">منتجاتنا</p>
+      <h1>اختر القسم</h1>
+      <p class="lead">كل منتج بنجهزه خصيصًا إلك. اختر القسم، أو احكيلنا فكرتك وإحنا بنساعدك.</p>
+    </div>
+    <div class="wrap"><div class="cat-grid big" id="allCats"></div></div>
+  </section>
+
+  <!-- ===== صفحة القسم (تتعبّى تلقائيًا) ===== -->
+  <section class="page" data-page="category" hidden>
+    <div class="wrap page-head">
+      <nav class="crumbs" aria-label="مسار التصفح"><a href="#products">منتجاتنا</a> <span>/</span> <span id="catCrumb"></span></nav>
+      <h1 id="catTitle"></h1>
+      <p class="lead" id="catBlurb"></p>
+    </div>
+    <div class="wrap">
+      <div class="prod-grid" id="prodGrid"></div>
+      <div class="custom-note">
+        <p>ما لقيت اللي ببالك؟ كل منتجاتنا قابلة للتخصيص.</p>
+        <a class="btn btn-primary js-wa" id="catCustom">احكيلنا فكرتك</a>
+      </div>
+      <div class="other-cats">
+        <h2>أقسام ثانية</h2>
+        <div class="chips" id="otherCats"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ليش رمانة ===== -->
+  <section class="page" data-page="why" hidden>
+    <div class="wrap page-head">
+      <p class="eyebrow">ليش رمانة؟</p>
+      <h1>لأن كل هدية إلها قصة</h1>
+    </div>
+    <div class="wrap"><div class="why-grid big js-why"></div></div>
+  </section>
+
+  <!-- ===== كيف تطلب ===== -->
+  <section class="page" data-page="how" hidden>
+    <div class="wrap page-head">
+      <p class="eyebrow">كيف تطلب؟</p>
+      <h1>ثلاث خطوات وبس</h1>
+    </div>
+    <div class="wrap">
+      <ol class="steps big js-steps"></ol>
+      <div class="faq" id="faq">
+        <h2>أسئلة بتتكرر</h2>
+        <div class="faq-list" id="faqList"></div>
+      </div>
+      <div class="custom-note">
+        <p>جاهز؟ ابعتلنا على واتساب وابدأ طلبك.</p>
+        <a class="btn btn-primary js-wa" data-msg="مرحبا رمانة 🤍 بدي أطلب">اطلب عبر واتساب</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== التوصيل والاستلام ===== -->
+  <section class="page" data-page="delivery" hidden>
+    <div class="wrap page-head">
+      <p class="eyebrow">التوصيل والاستلام</p>
+      <h1>بنوصلك وين ما كنت</h1>
+    </div>
+    <div class="wrap delivery">
+      <div class="del-card">
+        <span class="del-ic" aria-hidden="true">📦</span>
+        <h2>التوصيل</h2>
+        <p>نوفر خدمة التوصيل إلى مختلف مناطق الضفة الغربية والقدس.</p>
+      </div>
+      <div class="del-card">
+        <span class="del-ic" aria-hidden="true">📍</span>
+        <h2>نقاط الاستلام</h2>
+        <p>كما تتوفر نقاط استلام لتسهيل استلام طلباتكم في:</p>
+        <ul class="pickups" id="pickups"></ul>
+      </div>
+    </div>
+    <div class="wrap"><p class="soft-note">نسعى دائمًا لتوفير خيارات استلام مريحة تناسبكم.</p></div>
+  </section>
+
+  <!-- ===== تجارب عملائنا ===== -->
+  <section class="page" data-page="reviews" hidden>
+    <div class="wrap page-head">
+      <p class="eyebrow">تجارب عملائنا</p>
+      <h1>كلامكم بيفرق معنا</h1>
+      <p class="lead">كلمات جميلة نعتز بها من أشخاص اختاروا رمانة لتوثيق لحظاتهم وهداياهم المميزة 🤍</p>
+    </div>
+    <div class="wrap"><div class="reviews" id="reviews"></div></div>
+  </section>
+
+  <!-- ===== تواصل معنا ===== -->
+  <section class="page" data-page="contact" hidden>
+    <div class="wrap page-head">
+      <p class="eyebrow">تواصل معنا</p>
+      <h1>احكي معنا</h1>
+      <p class="lead">جاهزين نساعدك في تنفيذ فكرتك أو الإجابة عن أي استفسار 🤍</p>
+    </div>
+    <div class="wrap contact" id="contactList"></div>
+    <div class="wrap">
+      <form class="order-form" id="inqForm" novalidate>
+        <div class="of-head">
+          <h2>ابعتلنا طلبك أو فكرتك</h2>
+          <p>عبّي التفاصيل وبتنفتح محادثة واتساب فيها رسالتك جاهزة. الصور بتبعتها بنفس المحادثة.</p>
+        </div>
+        <div class="fields" id="inqFields"></div>
+        <div class="field full">
+          <label for="inq-cat">القسم</label>
+          <select id="inq-cat" name="cat"></select>
+        </div>
+        <div class="field full">
+          <label for="inq-details">شو فكرتك؟ <i>*</i></label>
+          <textarea id="inq-details" name="details" rows="4" required placeholder="مثلًا: برواز لصورة تخرج بحجم 30×40 مع جملة تحت الصورة"></textarea>
+        </div>
+        <div class="form-foot">
+          <button class="btn btn-primary" type="submit">أرسل عبر واتساب</button>
+          <p class="form-msg" id="inqMsg" role="status"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <span class="logo-en" role="img" aria-label="rummana"></span>
+      <p>نحوّل الذكريات إلى هدايا تحمل معنى</p>
+    </div>
+    <nav class="foot-nav" aria-label="روابط سريعة">
+      <a href="#about">من نحن</a><a href="#products">منتجاتنا</a><a href="#how">كيف تطلب؟</a><a href="#delivery">التوصيل والاستلام</a><a href="#how">أسئلة شائعة</a><a href="#contact">تواصل معنا</a>
+    </nav>
+    <p class="copy">© <span id="yr">2025</span> رمانة. صُنع بحب في فلسطين.</p>
+  </div>
+</footer>
+
+<div class="drawer-bg" id="cartBg" hidden></div>
+<aside class="drawer" id="cart" hidden aria-label="سلة الطلب" tabindex="-1">
+  <div class="dr-head">
+    <h2>سلة الطلب</h2>
+    <button class="dr-close" id="cartClose" aria-label="إغلاق السلة">×</button>
+  </div>
+  <div class="dr-body">
+    <div class="cart-empty" id="cartEmpty">
+      <p>السلة فاضية.</p>
+      <a class="btn btn-ghost" href="#products" id="cartBrowse">تصفّح منتجاتنا</a>
+    </div>
+    <ul class="cart-items" id="cartItems"></ul>
+    <div class="cart-total" id="cartTotal" hidden></div>
+    <form class="order-form in-drawer" id="checkout" novalidate hidden>
+      <h3>بيانات الطلب</h3>
+      <div class="fields" id="coFields"></div>
+      <div class="field full">
+        <label for="co-notes">ملاحظات أو نص بدك نطبعه</label>
+        <textarea id="co-notes" name="notes" rows="3"></textarea>
+      </div>
+      <div class="form-foot">
+        <button class="btn btn-primary" type="submit">أرسل الطلب عبر واتساب</button>
+        <p class="form-msg" id="coMsg" role="status"></p>
+      </div>
+      <p class="small">بعد ما تبعت الطلب، ابعتلنا الصور بنفس محادثة الواتساب.</p>
+    </form>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<a class="wa-float js-wa" data-msg="مرحبا رمانة 🤍" aria-label="راسلنا على واتساب">
+  <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3Z"/></svg>
+</a>
+
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<!--BODY-END-->
+</body>
+</html>
