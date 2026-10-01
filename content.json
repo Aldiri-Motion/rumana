@@ -3,16 +3,6 @@
     "contact": {},
     "deliveryNote": ""
   },
-  "products": [
-    {
-      "id": "ptest",
-      "cat": "mugs",
-      "name": "منتج تجريبي",
-      "desc": "للتجربة فقط",
-      "price": 10,
-      "img": "assets/logo-ar.png",
-      "hidden": false
-    }
-  ],
+  "products": [],
   "testimonials": []
 }
