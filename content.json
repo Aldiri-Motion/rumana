@@ -3,6 +3,502 @@
     "contact": {},
     "deliveryNote": ""
   },
-  "products": [],
+  "products": [
+    {
+      "id": "frames-1",
+      "cat": "frames",
+      "name": "برواز صورة تخرج عائلية",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/frames-1.jpg",
+      "hidden": false
+    },
+    {
+      "id": "frames-2",
+      "cat": "frames",
+      "name": "برواز «يا أمان الخائفين»",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/frames-2.jpg",
+      "hidden": false
+    },
+    {
+      "id": "frames-3",
+      "cat": "frames",
+      "name": "برواز عقد قران بالأسماء",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/frames-3.jpg",
+      "hidden": false
+    },
+    {
+      "id": "frames-4",
+      "cat": "frames",
+      "name": "برواز شهادة تخرج",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/frames-4.jpg",
+      "hidden": false
+    },
+    {
+      "id": "frames-5",
+      "cat": "frames",
+      "name": "برواز صورة عائلية",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/frames-5.jpg",
+      "hidden": false
+    },
+    {
+      "id": "frames-6",
+      "cat": "frames",
+      "name": "برواز صورة عائلية بالكوفية",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/frames-6.jpg",
+      "hidden": false
+    },
+    {
+      "id": "frames-7",
+      "cat": "frames",
+      "name": "برواز «رمضان يجمعنا»",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/frames-7.jpg",
+      "hidden": false
+    },
+    {
+      "id": "frames-8",
+      "cat": "frames",
+      "name": "برواز كولاج صور",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/frames-8.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-1",
+      "cat": "favors",
+      "name": "بطاقات تخرج بصورة الطالب",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-1.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-2",
+      "cat": "favors",
+      "name": "بطاقات تخرج «Class of 2026»",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-2.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-3",
+      "cat": "favors",
+      "name": "توزيعة عيد مع بالون",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-3.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-4",
+      "cat": "favors",
+      "name": "توزيعات عيد للأطفال",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-4.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-5",
+      "cat": "favors",
+      "name": "توزيعة عيد مع سيارة",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-5.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-6",
+      "cat": "favors",
+      "name": "بطاقة دعوة مزخرفة",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-6.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-7",
+      "cat": "favors",
+      "name": "بطاقة مناسبة مزخرفة",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-7.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-8",
+      "cat": "favors",
+      "name": "توزيعة عيدية بالعملات",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-8.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-9",
+      "cat": "favors",
+      "name": "توزيعة عيد مع بالونات",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-9.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-10",
+      "cat": "favors",
+      "name": "توزيعة عداد تسبيح (بنفسجي)",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-10.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-11",
+      "cat": "favors",
+      "name": "توزيعة عداد تسبيح (ذهبي)",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-11.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-12",
+      "cat": "favors",
+      "name": "توزيعة عداد تسبيح (أخضر)",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-12.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-13",
+      "cat": "favors",
+      "name": "توزيعة عيد الأضحى للأطفال",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-13.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-14",
+      "cat": "favors",
+      "name": "توزيعة عيد الأضحى بالألوان",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-14.jpg",
+      "hidden": false
+    },
+    {
+      "id": "favors-15",
+      "cat": "favors",
+      "name": "مجموعة توزيعات عيد الأضحى",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/favors-15.jpg",
+      "hidden": false
+    },
+    {
+      "id": "stickers-1",
+      "cat": "stickers",
+      "name": "ملصقات عبوات منتجات",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/stickers-1.jpg",
+      "hidden": false
+    },
+    {
+      "id": "stickers-2",
+      "cat": "stickers",
+      "name": "ستيكرات للتلفون",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/stickers-2.jpg",
+      "hidden": false
+    },
+    {
+      "id": "stickers-3",
+      "cat": "stickers",
+      "name": "ستيكرات كرتون للتلفون",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/stickers-3.jpg",
+      "hidden": false
+    },
+    {
+      "id": "stickers-4",
+      "cat": "stickers",
+      "name": "ملصقات عبوات بشعار المحل",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/stickers-4.jpg",
+      "hidden": false
+    },
+    {
+      "id": "stickers-5",
+      "cat": "stickers",
+      "name": "ملصقات أسماء للمدرسة بالصورة",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/stickers-5.jpg",
+      "hidden": false
+    },
+    {
+      "id": "stickers-6",
+      "cat": "stickers",
+      "name": "ملصقات دفاتر بصورة الطفل",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/stickers-6.jpg",
+      "hidden": false
+    },
+    {
+      "id": "stickers-7",
+      "cat": "stickers",
+      "name": "ملصق اسم بشخصية كرتونية",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/stickers-7.jpg",
+      "hidden": false
+    },
+    {
+      "id": "stickers-8",
+      "cat": "stickers",
+      "name": "ملصقات دفاتر بشخصيات كرتونية",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/stickers-8.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-1",
+      "cat": "photos",
+      "name": "طباعة صورة مع ستاند",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-1.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-2",
+      "cat": "photos",
+      "name": "طباعة صورة تخرج",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-2.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-3",
+      "cat": "photos",
+      "name": "صور بولارويد",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-3.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-4",
+      "cat": "photos",
+      "name": "صور بولارويد للأطفال",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-4.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-5",
+      "cat": "photos",
+      "name": "صورة بولارويد",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-5.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-6",
+      "cat": "photos",
+      "name": "صور بولارويد مدرسية",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-6.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-7",
+      "cat": "photos",
+      "name": "صور بولارويد صغيرة",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-7.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-8",
+      "cat": "photos",
+      "name": "صورة «2026» مع ستاند",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-8.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-9",
+      "cat": "photos",
+      "name": "صور شخصية (باسبور)",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-9.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-10",
+      "cat": "photos",
+      "name": "صورة شخصية",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-10.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-11",
+      "cat": "photos",
+      "name": "طباعة صور بجودة عالية",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-11.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-12",
+      "cat": "photos",
+      "name": "رزمة صور مطبوعة",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-12.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-13",
+      "cat": "photos",
+      "name": "صورة جماعية «2026» مع ستاند",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-13.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-14",
+      "cat": "photos",
+      "name": "صور بولارويد تخرج",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-14.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-15",
+      "cat": "photos",
+      "name": "مجموعة بولارويد تخرج",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-15.jpg",
+      "hidden": false
+    },
+    {
+      "id": "photos-16",
+      "cat": "photos",
+      "name": "بولارويد تخرج",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/photos-16.jpg",
+      "hidden": false
+    },
+    {
+      "id": "mugs-1",
+      "cat": "mugs",
+      "name": "مج باسم بالخط العربي",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/mugs-1.jpg",
+      "hidden": false
+    },
+    {
+      "id": "mugs-2",
+      "cat": "mugs",
+      "name": "مج باسم بالإنجليزي",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/mugs-2.jpg",
+      "hidden": false
+    },
+    {
+      "id": "mugs-3",
+      "cat": "mugs",
+      "name": "مج بشعار المحل",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/mugs-3.jpg",
+      "hidden": false
+    },
+    {
+      "id": "mugs-4",
+      "cat": "mugs",
+      "name": "مج باسم ومهنة",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/mugs-4.jpg",
+      "hidden": false
+    },
+    {
+      "id": "mugs-5",
+      "cat": "mugs",
+      "name": "مج هدية للمعلمة",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/mugs-5.jpg",
+      "hidden": false
+    },
+    {
+      "id": "mugs-6",
+      "cat": "mugs",
+      "name": "مج هدية للمعلمة باسمها",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/mugs-6.jpg",
+      "hidden": false
+    },
+    {
+      "id": "mugs-7",
+      "cat": "mugs",
+      "name": "مج «أعظم معلمة في العالم»",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/mugs-7.jpg",
+      "hidden": false
+    },
+    {
+      "id": "mugs-8",
+      "cat": "mugs",
+      "name": "مج بصورة",
+      "desc": "",
+      "price": "",
+      "img": "assets/products/mugs-8.jpg",
+      "hidden": false
+    }
+  ],
   "testimonials": []
 }

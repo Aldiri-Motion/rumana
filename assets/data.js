@@ -24,6 +24,7 @@ window.RUMMANA = {
   categories: [
     {
       id: "frames",
+      img: "assets/products/frames-5.jpg", // صورة القسم بالصفحة الرئيسية
       name: "البراويز",
       blurb: "للصور واللحظات اللي بتحبوا تضل قريبة منكم",
       icon: "frame",
@@ -41,6 +42,7 @@ window.RUMMANA = {
     },
     {
       id: "mugs",
+      img: "assets/products/mugs-1.jpg", // صورة القسم بالصفحة الرئيسية
       name: "المجات",
       blurb: "صوركم، كلماتكم أو تصميم بتحبوه... على مج يصير جزء من يومكم",
       icon: "mug",
@@ -48,6 +50,7 @@ window.RUMMANA = {
     },
     {
       id: "photos",
+      img: "assets/products/photos-4.jpg", // صورة القسم بالصفحة الرئيسية
       name: "الصور",
       blurb: "صوركم المفضلة، بنطبعها إلكم بأحجام مختلفة وبجودة عالية",
       icon: "photo",
@@ -55,6 +58,7 @@ window.RUMMANA = {
     },
     {
       id: "favors",
+      img: "assets/products/favors-10.jpg", // صورة القسم بالصفحة الرئيسية
       name: "توزيعات مناسبات",
       blurb: "للخطوبة، التخرج، المواليد ومناسباتكم الحلوة",
       icon: "favor",
@@ -62,6 +66,7 @@ window.RUMMANA = {
     },
     {
       id: "stickers",
+      img: "assets/products/stickers-2.jpg", // صورة القسم بالصفحة الرئيسية
       name: "الستيكرات والملصقات",
       blurb: "ستيكرات من صوركم أو بتصاميم بتحبوها... للدفاتر، التلفون، اللابتوب، تغليف منتجاتكم وأكثر",
       icon: "sticker",
