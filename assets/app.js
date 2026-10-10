@@ -87,7 +87,7 @@
     el.innerHTML = WHY.map(function (w) { return '<div class="why"><span class="em" aria-hidden="true">' + w[0] + "</span><p>" + w[1] + "</p></div>"; }).join("");
   });
   $$(".js-steps").forEach(function (el) {
-    el.innerHTML = STEPS.map(function (s) { return '<li><span class="em" aria-hidden="true">' + s[0] + "</span><p>" + s[1] + "</p></li>"; }).join("");
+    el.innerHTML = STEPS.map(function (s) { return "<li><p>" + s[1] + "</p></li>"; }).join("");
   });
 
   $("#pickups").innerHTML = D.pickupPoints.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("");
