@@ -30,6 +30,8 @@ h1{font-size:clamp(2rem,1.2rem + 3.6vw,3.6rem)}
 h2{font-size:clamp(1.45rem,1.1rem + 1.2vw,2rem)}
 h3{font-size:1.2rem}
 p{margin:0}
+/* no single word left alone on the last line (Chrome/Android, Safari 26+) */
+p,li,blockquote,figcaption,label,h3,.c-card span{text-wrap:pretty}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .wrap{width:100%;max-width:1120px;margin-inline:auto;padding-inline:20px}
 :focus-visible{outline:3px solid var(--seed);outline-offset:3px;border-radius:6px}
@@ -137,6 +139,11 @@ p{margin:0}
 .why-grid.big .why p{font-size:1.15rem}
 @media (max-width:900px){.why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.why-grid,.why-grid.big{grid-template-columns:1fr}}
+@media (max-width:560px){
+  .why-grid.big .why{padding:18px 16px}
+  .why-grid.big .why p{font-size:1.05rem}
+  .why .em{width:44px;height:44px;font-size:1.45rem}
+}
 
 /* steps (a real sequence) */
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;counter-reset:s}
@@ -174,6 +181,7 @@ p{margin:0}
 .prod-img img{width:100%;height:100%;object-fit:cover}
 .prod-img.ph{border-bottom:1px dashed var(--line);color:var(--muted);font-size:.95rem;text-align:center;padding:12px;gap:6px;align-content:center}
 .prod-img.ph svg{width:40px;height:40px;color:var(--brand);opacity:.6;margin-inline:auto}
+.prod-body h3{text-wrap:balance}
 .prod-body{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
 .prod-body p{color:var(--muted);font-size:.93rem;line-height:1.6}
 .prod-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:8px;flex-wrap:wrap}
